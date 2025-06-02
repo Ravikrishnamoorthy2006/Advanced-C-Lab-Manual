@@ -15,13 +15,33 @@ Else
 6.	Return 0
  
 Program:
-
-//type your code here
+```
+#include<stdio.h>
+struct asd{
+    int age;
+    char name[20];
+};
+int main()
+{
+    struct asd p;
+    scanf("%d",&p.age);
+    scanf("%s",p.name);
+    printf("Age:%d\n",p.age);
+    printf("Name:%svaccine:%d\n",p.name,p.age);
+    if(p.age>18){
+       printf("eligibility:yes"); 
+    }
+    else{
+        printf("eligibility:no");
+    }
+}
+```
 
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/e352603d-2a69-4e2e-ade8-c30a9670809e)
+
 
 
 Result:
@@ -44,7 +64,31 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+struct Numbers {
+    int num1;
+    int num2;
+    
+};
+struct Result {
+    int sum;
+};
+struct Result compute(struct Numbers nums) {
+    struct Result res;
+    res.sum = nums.num1 + nums.num2;
+    return res; 
+}
+
+int main() {
+    struct Numbers nums;
+    struct Result res;
+    scanf("%d %d ", &nums.num1, &nums.num2);
+    res = compute(nums);
+    printf("%d\n", res.sum);
+    return 0;
+}
+```
 
 
 
@@ -52,7 +96,8 @@ Program:
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/58bc0409-2242-494f-b52c-f3f6a5b00107)
+
 
 
 
