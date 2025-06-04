@@ -12,12 +12,23 @@ Algorithm:
 7.	Use the display function to visualize the stack's contents
  
 Program:
+```
+char stack[100];
+int top;
 
-//type your code here
+void display()
+{
+    for(int i=top;i>=0;i--)
+    {
+        printf("%c ",stack[i]);
+    }
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/497ded0f-844a-4799-9836-34959d163b66)
+
 
 
 
@@ -36,11 +47,24 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int size=3,top=-1;
+float stack[100];
+void push (float data)
+{
+    if(top==size-1){
+        printf("stack is full\n");
+    }else{
+        top+=1;
+        stack[top]=data;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/e832c31d-4057-4687-ab86-4d30eda68f0c)
+
 
 
 
@@ -62,11 +86,26 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int front,rear;
+float queue[100];
+
+void display()
+{
+    if(front==-1){
+        printf("No elements to display");
+    }else{
+        for(int i=front;i<=rear;i++){
+            printf("%.1f\n",queue[i]);
+        }
+    }
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/b0f25bb7-58e4-4afd-94e8-151559c342e7)
+
 
 
 Result:
