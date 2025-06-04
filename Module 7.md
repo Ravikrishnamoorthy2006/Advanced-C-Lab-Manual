@@ -107,7 +107,7 @@ Thus, the program is verified successfully
 
 
  
-EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()
+EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND CREATE THAT FILE USING FOPEN()
 
 Aim:
 To write a C program to read a file name from user
@@ -131,7 +131,22 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+int main()
+{
+    char filename[100];
+    FILE *fp;
+    scanf("%s",filename);
+    fp=fopen(filename,"w");
+    if(fp!=NULL){
+        printf("%s File Created Successfully\n",filename);
+        printf("%s File Opened\n",filename);
+    }
+    fclose(fp);
+    printf("%s File Closed",filename);
+}
+```
 
 
 
@@ -139,11 +154,7 @@ Program:
 Output:
 
 
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/f91eab94-8e78-4687-bb48-2dc7d3a34204)
 
 
 
@@ -177,8 +188,33 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-//type your code here
+```
+#include <stdio.h>
+int main()
+{
+   char name[50],ch[100];
+   int i,num;
+   scanf("%s", name);
+   scanf("%d", &num);
+   FILE *fptr = fopen(name, "w");
+   
+  if(fptr == NULL)
+  {
+      printf("Error!");
+      return 1;
+  }else{
+   printf("%s Opened\n",name);
+  }
+   for(i = 0; i < num; i++)
+   {
+      fgets(ch,sizeof(ch),stdin);
+      fprintf(fptr,"%s\n",ch);
+   }
+   fclose(fptr);
+   printf("Data added Successfully");
+   return 0;
+}
+```
 
 
 
@@ -186,7 +222,8 @@ Program:
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/332cb406-6b64-4168-99f5-f220ea42cca3)
+
 
 
 
